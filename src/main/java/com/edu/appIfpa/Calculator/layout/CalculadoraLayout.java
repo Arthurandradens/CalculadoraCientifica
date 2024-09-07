@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CalculadoraLayout extends JFrame {
-    final private JButton[] numButtons = new JButton[10];
+    List<JButton> numList = new ArrayList<>();
     final private JButton addButton, subButton, mulButton, divButton;
     final private JButton decButton, equButton;
     private JPanel panel = new JPanel();
@@ -25,58 +25,95 @@ public class CalculadoraLayout extends JFrame {
         equButton = new JButton("=");
 
         inicializaOperadores();
+        inicializaNumeros();
+        inicializaPainel();
     }
+
+    public List<JButton> getNumList() {
+        return numList;
+    }
+
+    public JButton getAddButton() {
+        return addButton;
+    }
+
+    public JButton getSubButton() {
+        return subButton;
+    }
+
+    public JButton getMulButton() {
+        return mulButton;
+    }
+
+    public JButton getDivButton() {
+        return divButton;
+    }
+
+    public JButton getDecButton() {
+        return decButton;
+    }
+
+    public JButton getEquButton() {
+        return equButton;
+    }
+
+    public ActionListener getActionListener() {
+        return actionListener;
+    }
+
     public void inicializaOperadores () {
-        List <JButton> funcButtons = new ArrayList<>();
-        funcButtons.set(0, addButton);
-        funcButtons.set(1, subButton);
-        funcButtons.set(2, mulButton);
-        funcButtons.set(3, divButton);
-        funcButtons.set(4, decButton);
-        funcButtons.set(5, equButton);
-        for (int i = 0; i < 8; i++) {
-            funcButtons.get(i).addActionListener(this.actionListener);
-            funcButtons[i].setFont(new Font("Arial", Font.BOLD, 20));
-            funcButtons[i].setFocusable(false);
-        }
-        funcButtons.stream().map(f -> f.addActionListener(this.actionListener))
+        List <JButton> operadoresList = new ArrayList<>(6);
+        operadoresList.add(addButton);
+        operadoresList.add(subButton);
+        operadoresList.add(mulButton);
+        operadoresList.add(divButton);
+        operadoresList.add(decButton);
+        operadoresList.add(equButton);
+
+        adicionaPropriedadesAoBotao(operadoresList);
     }
-    public CalculadoraLayout() {
 
+    public void inicializaNumeros(){
 
-
-        // Definindo os botões numéricos
         for (int i = 0; i < 10; i++) {
-            numButtons[i] = new JButton(String.valueOf(i));
-            numButtons[i].addActionListener(this);
-            numButtons[i].setFont(new Font("Arial", Font.BOLD, 20));
-            numButtons[i].setFocusable(false);
+            numList.add(new JButton(String.valueOf(i)));
         }
+        adicionaPropriedadesAoBotao(numList);
+    }
+
+    public void adicionaPropriedadesAoBotao(List<JButton> list){
+        list.forEach(b -> {
+            b.addActionListener(this.actionListener);
+            b.setFont(new Font("Arial",Font.BOLD,20));
+            b.setFocusable(false);
+        });
+    }
+
+   void inicializaPainel(){
 
         // Criando um painel para organizar os botões
-
         panel.setBounds(50, 100, 300, 300);
         panel.setLayout(new GridLayout(4, 4, 10, 10));
 
         // Adiciona os botões ao painel
-        panel.add(numButtons[1]);
-        panel.add(numButtons[2]);
-        panel.add(numButtons[3]);
+        panel.add(numList.get(0));
+        panel.add(numList.get(1));
+        panel.add(numList.get(2));
         panel.add(addButton);
-        panel.add(numButtons[4]);
-        panel.add(numButtons[5]);
-        panel.add(numButtons[6]);
+        panel.add(numList.get(3));
+        panel.add(numList.get(4));
+        panel.add(numList.get(5));
         panel.add(subButton);
-        panel.add(numButtons[7]);
-        panel.add(numButtons[8]);
-        panel.add(numButtons[9]);
+        panel.add(numList.get(6));
+        panel.add(numList.get(7));
+        panel.add(numList.get(8));
         panel.add(mulButton);
         panel.add(decButton);
-        panel.add(numButtons[0]);
+        panel.add(numList.get(9));
         panel.add(equButton);
         panel.add(divButton);
-
     }
+
     public JPanel getPanel() {
         return panel;
     }
