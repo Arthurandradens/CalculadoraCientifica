@@ -9,19 +9,16 @@ import java.awt.event.ActionEvent;
 public class ActionListenerService {
     OperadorService operadorService = new OperadorService();
     private String operator;
+    private double num1;
     public void actionPerformed(
-            double num1,
             Display display,
             ButtonsSimpleCalculator buttonsSimpleCalculator,
             ButtonsController buttonsController,
             ActionEvent e) {
 
-
-
         for (int i = 0; i < 10; i++) {
             if (e.getSource() == buttonsSimpleCalculator.getNumButtons()[i]) {
                 display.addCharInDisplay(String.valueOf(i));
-
             }
         }
         if (e.getSource() == buttonsSimpleCalculator.getDecButton()) {

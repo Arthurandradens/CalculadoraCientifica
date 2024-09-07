@@ -35,9 +35,7 @@ public class Calculadora extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        double num1 = 0;
         listener.actionPerformed(
-                num1,
                 display,
                 panelButtonsSimpleCalculator.getButtons(),
                 buttonsController,
