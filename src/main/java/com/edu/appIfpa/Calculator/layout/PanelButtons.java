@@ -29,6 +29,7 @@ public class PanelButtons {
         panel.add(buttons.getEquButton());
         panel.add(buttons.getDivButton());
 
+
     }
     public ButtonsSimpleCalculator getButtons() {
         return buttons;
