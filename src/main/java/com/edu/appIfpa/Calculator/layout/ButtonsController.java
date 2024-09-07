@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 public class ButtonsController {
     final private JButton delButton, clrButton, cientificaButton;
 
-    public ButtonsController(JFrame frame, ActionListener actionListener) {
+    public ButtonsController(ActionListener actionListener) {
         delButton = new JButton("DEL");
         clrButton = new JButton("CLR");
         cientificaButton = new JButton("§");

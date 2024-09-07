@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 public class Calculadora extends JFrame implements ActionListener {
     ActionListenerService listener = new ActionListenerService();
     private final Display display = new Display();
-    ButtonsController buttonsController = new ButtonsController(this, this);
+    ButtonsController buttonsController = new ButtonsController(this);
     PanelButtons panelButtonsSimpleCalculator = new PanelButtons(this);
 
     public Calculadora() {
