@@ -5,18 +5,15 @@ import java.awt.*;
 
 public class Display {
     private final JTextField displayTextField = new JTextField();
-    private int width = 300;
 
     public Display() {
-        displayTextField.setBounds(50, 25, width, 50);
         displayTextField.setEditable(false);
-        displayTextField.setFont(new Font("Arial", Font.BOLD, 24));
+        displayTextField.setFont(new Font("Arial", Font.BOLD, 80));
+        displayTextField.setHorizontalAlignment(JTextField.RIGHT);
     }
-    public void setWidth(int width) {
-        this.width = width;
-    }
+
     public void addDisplay(JFrame frame) {
-        frame.add(displayTextField);
+        frame.add(displayTextField, BorderLayout.NORTH);
     }
     public void addCharInDisplay (String value) {
         displayTextField.setText(displayTextField.getText().concat(value));
@@ -36,5 +33,13 @@ public class Display {
     }
     public void setTextInDisplay (String text) {
         displayTextField.setText(text);
+    }
+    public void addSymbolSciInDisplay (String value) {
+        displayTextField.setText(value.concat("("+displayTextField.getText()));
+    }
+    public void removeSymbolSciInDisplay (String value) {
+        System.out.println(value);
+        displayTextField.setText(displayTextField.getText().replace(value+"(", ""));
+        System.out.println(displayTextField.getText());
     }
 }
