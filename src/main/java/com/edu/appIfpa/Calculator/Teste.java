@@ -153,16 +153,16 @@ public class Teste extends JFrame implements ActionListener {
             display.setText(String.valueOf(result));
             num1 = result;
         }
-        if (e.getSource() == clrButton) {
-            display.setText("");
-        }
-        if (e.getSource() == delButton) {
-            String str = display.getText();
-            display.setText("");
-            for (int i = 0; i < str.length() - 1; i++) {
-                display.setText(display.getText() + str.charAt(i));
-            }
-        }
+//        if (e.getSource() == clrButton) {
+//            display.setText("");
+//        }
+//        if (e.getSource() == delButton) {
+//            String str = display.getText();
+//            display.setText("");
+//            for (int i = 0; i < str.length() - 1; i++) {
+//                display.setText(display.getText() + str.charAt(i));
+//            }
+//        }
     }
 
     public static void main(String[] args) {
