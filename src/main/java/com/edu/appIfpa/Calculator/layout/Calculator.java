@@ -1,7 +1,5 @@
 package com.edu.appIfpa.Calculator.layout;
 
-import com.edu.appIfpa.Calculator.layout.Display;
-import com.edu.appIfpa.Calculator.layout.Panels;
 import com.edu.appIfpa.Calculator.service.ActionListenerService;
 
 import javax.swing.*;
