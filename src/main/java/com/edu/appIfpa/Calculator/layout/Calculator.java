@@ -27,6 +27,7 @@ public class Calculator extends JFrame implements ActionListener {
         this.setSize(420, 550);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
+        this.setResizable(false);
     }
 
     private void setupLayout() {
