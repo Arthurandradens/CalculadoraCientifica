@@ -3,12 +3,13 @@ package com.edu.appIfpa.Calculator.model.buttonsType;
 import javax.swing.*;
 
 public class NumberButtons {
-    final private JButton[] numButtons = new JButton[10];
+    final private JButton[] funcButtons = new JButton[12];
     public NumberButtons() {
-        for (int i = 0; i < numButtons.length; i++)
-            numButtons[i] = new JButton(String.valueOf(i));
+        String[] SYMBOLS = {"1", "2", "3", "4", "5", "6", "7", "8", "9", ".","0","="};
+        for (int i = 0; i < SYMBOLS.length; i++)
+            funcButtons[i] = new JButton(SYMBOLS[i]);
     }
     public JButton[] getNumButtons() {
-        return numButtons;
+        return funcButtons;
     }
 }

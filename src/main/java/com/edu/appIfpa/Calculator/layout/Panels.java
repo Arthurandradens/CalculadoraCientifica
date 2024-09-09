@@ -22,12 +22,12 @@ public class Panels {
     private void createPanels() {
         numberPanel = new PanelButtons(
                 buttonsListManager.getNumberButtons(),
-                new int[]{4, 4, 10, 10},
+                new int[]{4, 3, 10, 10},
                 actionListeners
         );
         operatorPanel = new PanelButtons(
                 buttonsListManager.getOperatorButtons(),
-                new int[]{3, 2, 10, 10},
+                new int[]{4, 1, 10, 10},
                 actionListeners
         );
         controllerPanel = new PanelButtons(

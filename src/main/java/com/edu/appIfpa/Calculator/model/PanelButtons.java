@@ -6,6 +6,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class PanelButtons {
     private final JPanel panel = new JPanel();
@@ -30,6 +31,7 @@ public class PanelButtons {
         configurePanel();
         for (JButton button : buttons) {
             new ButtonManager(button, actionListeners);
+
             panel.add(button);
         }
         panel.setBorder(new EmptyBorder(10, 10, 10, 10));

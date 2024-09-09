@@ -3,6 +3,7 @@ package com.edu.appIfpa.Calculator.core;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class ButtonManager {
     final private JButton button;
@@ -13,6 +14,7 @@ public class ButtonManager {
     public ButtonManager(JButton button, ActionListener actionListener) {
         this.button = button;
         this.actionListener = actionListener;
+
         configureButton();
     }
     private void configureButton() {
