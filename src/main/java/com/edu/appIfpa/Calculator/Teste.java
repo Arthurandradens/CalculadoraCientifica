@@ -106,6 +106,7 @@ public class Teste extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         for (int i = 0; i < 10; i++) {
             if (e.getSource() == numButtons[i]) {
+
                 display.setText(display.getText().concat(String.valueOf(i)));
             }
         }
