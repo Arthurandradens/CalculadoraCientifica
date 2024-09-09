@@ -41,7 +41,6 @@ public class Panels {
                 actionListeners
         );
     }
-
     public PanelButtons getNumberPanel() {
         return numberPanel;
     }
@@ -54,16 +53,12 @@ public class Panels {
     public PanelButtons getScientificPanel() {
         return scientificPanel;
     }
-
-
     public ButtonsListManager getButtonsListManager() {
         return buttonsListManager;
     }
-
     public boolean isScientificActivated() {
         return scientificActivated;
     }
-
     public void setScientificActivated(boolean scientificActivated) {
         this.scientificActivated = scientificActivated;
     }
