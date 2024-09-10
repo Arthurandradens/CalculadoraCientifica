@@ -31,7 +31,6 @@ public class PanelButtons {
         configurePanel();
         for (JButton button : buttons) {
             new ButtonManager(button, actionListeners);
-
             panel.add(button);
         }
         panel.setBorder(new EmptyBorder(10, 10, 10, 10));

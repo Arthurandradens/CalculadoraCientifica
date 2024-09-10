@@ -3,7 +3,6 @@ package com.edu.appIfpa.Calculator.core;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.util.Objects;
 
 public class ButtonManager {
     final private JButton button;
