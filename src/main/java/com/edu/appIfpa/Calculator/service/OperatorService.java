@@ -12,16 +12,16 @@ public class OperatorService {
                 case "-":
                     result = num1 - num2;
                     break;
-                case "*":
+                case "x":
                     result = num1 * num2;
                     break;
-                case "/":
+                case "÷":
                     result = num1 / num2;
                     break;
-                case "pow":
-                    result = Math.pow(num1, num2);
+                case "x²":
+                    result = Math.pow(num1, 2);
                     break;
-                case "sqrt":
+                case "²√":
                     result = Math.sqrt(num1);
                     break;
                 case "sin":
@@ -33,7 +33,7 @@ public class OperatorService {
                 case "tan":
                     result = Math.tan(num1);
                     break;
-                case "cbrt":
+                case "³√":
                     result = Math.cbrt(num1);
                     break;
                 case "log":
@@ -42,8 +42,14 @@ public class OperatorService {
                 case "%":
                     result = num1 % num2;
                     break;
+                case "abs":
+                    result = Math.abs(num1);
+                    break;
                 case "1/":
                     result = 1/num1;
+                    break;
+                case "rd":
+                    result = Math.round(num1);
                     break;
                     default:
                         break;

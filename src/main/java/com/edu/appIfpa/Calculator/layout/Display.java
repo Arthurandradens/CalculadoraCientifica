@@ -2,6 +2,7 @@ package com.edu.appIfpa.Calculator.layout;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.DecimalFormat;
 
 public class Display {
     private final JTextField displayTextField = new JTextField();
@@ -31,7 +32,19 @@ public class Display {
     public String getTextInDisplay () {
         return displayTextField.getText();
     }
-    public void setTextInDisplay (String text) {
+    public void setTextInDisplay (double num) {
+        var text = "";
+        if (num >= 1000) text = validateNumberSize(num);
+        else {
+            text = String.valueOf(num);
+        }
         displayTextField.setText(text);
+    }
+
+    public String validateNumberSize(double num){
+
+        DecimalFormat df = new DecimalFormat();
+        df.applyPattern("#,##0,000");
+        return String.valueOf(df.format(num));
     }
 }

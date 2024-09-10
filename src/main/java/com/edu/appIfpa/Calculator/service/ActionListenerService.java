@@ -38,7 +38,7 @@ public class ActionListenerService {
                             num2 = 0.0;
                         }
                         double result = operatorService.selectionOperator(operator, num1, num2);
-                        display.setTextInDisplay(String.valueOf(result));
+                        display.setTextInDisplay(result);
                         num1 = result;
                         break;
                         default:
@@ -56,6 +56,7 @@ public class ActionListenerService {
                         break;
                     case "CLR":
                         display.deleteTextInDisplay();
+                        num1 = 0;
                         break;
                     case "§":
                         panels.setScientificActivated(!panels.isScientificActivated());
@@ -69,7 +70,7 @@ public class ActionListenerService {
         for (JButton button: panels.getButtonsListManager().getScientificButtons()) {
             if (e.getSource() == button){
                 switch (button.getText()){
-                    case "sqrt","sin","cos","tan","cbrt","log","1/":
+                    case "x²","²√","sin","cos","tan","³√","log","1/","abs","rd":
                         num1 = Double.parseDouble(display.getTextInDisplay());
                         operator = button.getText();
                         double num2;
@@ -79,10 +80,10 @@ public class ActionListenerService {
                             num2 = 0.0;
                         }
                         double result = operatorService.selectionOperator(operator, num1, num2);
-                        display.setTextInDisplay(String.valueOf(result));
+                        display.setTextInDisplay(result);
                         num1 = result;
                         break;
-                    case "pow", "%":
+                    case "%":
                         num1 = Double.parseDouble(display.getTextInDisplay());
                         operator = button.getText();
                         display.deleteTextInDisplay();
