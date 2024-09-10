@@ -34,12 +34,4 @@ public class Display {
     public void setTextInDisplay (String text) {
         displayTextField.setText(text);
     }
-    public void addSymbolSciInDisplay (String value) {
-        displayTextField.setText(value.concat("("+displayTextField.getText()));
-    }
-    public void removeSymbolSciInDisplay (String value) {
-        System.out.println(value);
-        displayTextField.setText(displayTextField.getText().replace(value+"(", ""));
-        System.out.println(displayTextField.getText());
-    }
 }

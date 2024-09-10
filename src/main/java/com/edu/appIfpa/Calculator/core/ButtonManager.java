@@ -13,6 +13,7 @@ public class ButtonManager {
     public ButtonManager(JButton button, ActionListener actionListener) {
         this.button = button;
         this.actionListener = actionListener;
+
         configureButton();
     }
     private void configureButton() {
